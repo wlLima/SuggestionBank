@@ -4,7 +4,12 @@ using System.Text;
 
 namespace SuggestionBank.ViewModel
 {
-    class CreateSuggestionViewModel
+    public class CreateSuggestionViewModel
     {
+
+        public void SaveSuggestion()
+        {
+
+        }
     }
 }

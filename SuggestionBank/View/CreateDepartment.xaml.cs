@@ -11,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace SuggestionBank.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CreateSuggestion : ContentPage
+	public partial class CreateDepartment : ContentPage
 	{
-		public CreateSuggestion ()
+		public CreateDepartment ()
 		{
 			InitializeComponent ();
-			BindingContext = new CreateSuggestionViewModel();
+			BindingContext = new CreateDepartmentViewModel();
 		}
 	}
 }
