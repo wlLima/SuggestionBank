@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="SuggestionBank.MainPage">
+
+    <StackLayout>
+        <pancakeview:PancakeView  BackgroundColor="#e14" Padding="24" CornerRadius="0,0,15,15">
+            <pancakeview:PancakeView.Shadow>
+                <pancakeview:DropShadow Color="#000000" Offset="15,15"   />
+            </pancakeview:PancakeView.Shadow>
+            
+            <Label Text="Banco de Sugestões" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </pancakeview:PancakeView>
+
+        <Grid Margin="10, 20, 0,0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <pancakeview:PancakeView
+                CornerRadius="8" 
+                BackgroundColor="#fff" 
+                Padding="10"
+                HeightRequest="100"
+                WidthRequest="250"
+                Margin="10, 0"
+                HorizontalOptions="CenterAndExpand"
+                >
+                <pancakeview:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CreateSuggestionCommand}" />
+                </pancakeview:PancakeView.GestureRecognizers>
+                
+                <pancakeview:PancakeView.Shadow>
+                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                </pancakeview:PancakeView.Shadow>
+                
+                <Label Text="Cadastrar sugestões" TextColor="#000" />
+            </pancakeview:PancakeView>
+
+            <pancakeview:PancakeView 
+                CornerRadius="8" 
+                BackgroundColor="#fff" 
+                Padding="10" 
+                Margin="10, 0"
+                HeightRequest="100"
+                WidthRequest="250"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Column="1"
+                >
+                <pancakeview:PancakeView.Shadow>
+                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                </pancakeview:PancakeView.Shadow>
+                
+                <Label Text="Cadastrar Departamento" TextColor="#000" />
+            </pancakeview:PancakeView>
+
+            <pancakeview:PancakeView 
+                CornerRadius="8" 
+                BackgroundColor="#fff" 
+                Padding="10" 
+                Margin="10, 0"
+                HeightRequest="100"
+                WidthRequest="250"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="1"
+                >
+                <pancakeview:PancakeView.Shadow>
+                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                </pancakeview:PancakeView.Shadow>
+                
+                <Label Text="Listar Sugestões" TextColor="#000" />
+            </pancakeview:PancakeView>
+
+            <pancakeview:PancakeView 
+                CornerRadius="8" 
+                BackgroundColor="#fff" 
+                Padding="10" 
+                Margin="10, 0"
+                HeightRequest="100"
+                WidthRequest="250"
+                HorizontalOptions="CenterAndExpand"
+                Grid.Row="1"
+                Grid.Column="1"
+                >
+                <pancakeview:PancakeView.Shadow>
+                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                </pancakeview:PancakeView.Shadow>
+                <Label Text="Listar Departamentos" TextColor="#000" />
+            </pancakeview:PancakeView>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
