@@ -10,8 +10,8 @@
             
             <Editor Placeholder="Sugestão" HeightRequest="80" />
             <Editor Placeholder="Justificativa" HeightRequest="80" />
-            
-            <Button Text="Salvar" />
+
+            <Button Text="Salvar" Command="{Binding SaveCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

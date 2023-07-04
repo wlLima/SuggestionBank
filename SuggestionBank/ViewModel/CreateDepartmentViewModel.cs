@@ -11,8 +11,8 @@ namespace SuggestionBank.ViewModel
 {
     public class CreateDepartmentViewModel
     {
-        private Department auxiliar;
-        public Department Departments { get => auxiliar; set { auxiliar = value; NotifyPropertyChanged(); } }
+        private Department assistant;
+        public Department Departments { get => assistant; set { assistant = value; NotifyPropertyChanged(); } }
 
         public ICommand SaveCommand { get; set; }
 
