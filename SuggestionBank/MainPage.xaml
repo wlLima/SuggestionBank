@@ -75,6 +75,10 @@
                 HorizontalOptions="CenterAndExpand"
                 Grid.Row="1"
                 >
+                <pancakeview:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ListSuggestionCommand}" />
+                </pancakeview:PancakeView.GestureRecognizers>
+                
                 <pancakeview:PancakeView.Shadow>
                     <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
                 </pancakeview:PancakeView.Shadow>
@@ -93,6 +97,10 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 >
+                <pancakeview:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ListDepartmentCommand}" />
+                </pancakeview:PancakeView.GestureRecognizers>
+                
                 <pancakeview:PancakeView.Shadow>
                     <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
                 </pancakeview:PancakeView.Shadow>

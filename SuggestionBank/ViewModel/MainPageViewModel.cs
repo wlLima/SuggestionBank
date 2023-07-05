@@ -18,6 +18,8 @@ namespace SuggestionBank.ViewModel
         {
             CreateSuggestionCommand = new Command(() => Navigate(new CreateSuggestion()));
             CreateDepartmentCommand = new Command(() => Navigate(new CreateDepartment()));
+            ListSuggestionCommand = new Command(() => Navigate(new ListSuggestions()));
+            ListDepartmentCommand = new Command(() => Navigate(new ListDepartments()));
         }
 
     }
