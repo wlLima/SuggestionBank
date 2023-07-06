@@ -34,9 +34,19 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <MandroidI18n />
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\lima1\OneDrive\Documentos\Pessoal\Keystore\suggestion\suggestion.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>sug1303</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>suggestion</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>sug1303</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>false</DebugSymbols>
     <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
@@ -44,6 +54,20 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidLinkTool>r8</AndroidLinkTool>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidDexTool>dx</AndroidDexTool>
+    <MandroidI18n />
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\lima1\OneDrive\Documentos\Pessoal\Keystore\suggestion\suggestion.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyAlias>suggestion</AndroidSigningKeyAlias>
+    <AndroidSigningStorePass>sug1303</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>sug1303</AndroidSigningKeyPass>
+    <AndroidSupportedAbis>armeabi-v7a;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
