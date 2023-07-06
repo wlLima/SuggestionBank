@@ -5,9 +5,15 @@
              Title="Lista de Departamentos">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <ListView x:Name="DepartmentView" IsPullToRefreshEnabled="true" Margin="10,10" SeparatorColor="Gray" ItemsSource="{Binding ListDepartments}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="#000" Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

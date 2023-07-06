@@ -8,5 +8,20 @@
             <Setter Property="BackgroundColor" Value="#0D7DD5" />
             <Setter Property="TextColor" Value="#fff" />
         </Style>
+
+        <Style TargetType="Frame" x:Key="EntryFrame">
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="1,0"/>
+            <Setter Property="Background" Value="#fff"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="TextColor" Value="#000" />
+            <Setter Property="Opacity" Value="0.6" />
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
     </Application.Resources>
 </Application>

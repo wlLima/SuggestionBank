@@ -5,7 +5,10 @@
              Title="Cadastrar Departamento">
     <ContentPage.Content>
         <StackLayout Margin="10,20,10,0">
-            <Entry Placeholder="Nome do Departamento"/>
+            <!--<Entry Text="{Binding Departments.Name}" Placeholder="Nome do Departamento"/>-->
+            <Frame Style="{StaticResource EntryFrame}">
+                <Entry Text="{Binding Departments.Name}" Placeholder="Nome do Departamento" WidthRequest="250"/>
+            </Frame>
 
             <Button Text="Salvar" Command="{Binding SaveCommand}"/>
         </StackLayout>

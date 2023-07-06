@@ -5,9 +5,18 @@
              Title="Lista de Sugestões">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+
+            <ListView x:Name="SuggestionView" IsPullToRefreshEnabled="true" Margin="10,10" SeparatorColor="Gray" ItemsSource="{Binding ListSuggestions}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="#000" Text="{Binding Suggestion}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

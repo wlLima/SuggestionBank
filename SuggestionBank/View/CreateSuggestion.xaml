@@ -5,11 +5,11 @@
              Title="Cadastrar Sugestão">
     <ContentPage.Content>
         <StackLayout Margin="10,20,10,0">
-            <Entry Placeholder="Nome do Colaborador"/>
-            <Entry Placeholder="Departamento"/>
-            
-            <Editor Placeholder="Sugestão" HeightRequest="80" />
-            <Editor Placeholder="Justificativa" HeightRequest="80" />
+            <Entry Text="{Binding Suggestions.Collaborator}" Placeholder="Nome do Colaborador"/>
+            <Entry Text="{Binding Suggestions.Departament}" Placeholder="Departamento"/>
+
+            <Editor Text="{Binding Suggestions.Suggestion}" Placeholder="Sugestão" HeightRequest="80" />
+            <Editor Text="{Binding Suggestions.Justification}" Placeholder="Justificativa" HeightRequest="80" />
 
             <Button Text="Salvar" Command="{Binding SaveCommand}" />
         </StackLayout>
