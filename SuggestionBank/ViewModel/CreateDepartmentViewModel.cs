@@ -1,7 +1,9 @@
 ﻿using SuggestionBank.DB;
 using SuggestionBank.Model;
+using SuggestionBank.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -27,6 +29,8 @@ namespace SuggestionBank.ViewModel
             SaveCommand = new Command(() => SaveDepartment());
         }
 
+       
+
         public async void SaveDepartment()
         {
             try
@@ -38,8 +42,9 @@ namespace SuggestionBank.ViewModel
 
                 _context.Department.Add(Departments);
                 _context.SaveChanges();
-                Department teste = _context.Department.FirstOrDefault();
-                await App.Current.MainPage.DisplayAlert("Teste", $"{teste.Name}", "Ok");
+               // Department teste = _context.Department.FirstOrDefault();
+                await App.Current.MainPage.DisplayAlert("Departamento", $"Salvo com sucesso! ", "Ok");
+                await App.Current.MainPage.Navigation.PopAsync();
             }
             catch(Exception ex)
             {

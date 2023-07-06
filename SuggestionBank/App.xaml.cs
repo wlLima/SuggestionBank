@@ -10,7 +10,7 @@ namespace SuggestionBank
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage()) {BarBackground = Color.FromHex("#B92E1A") };
         }
 
         protected override void OnStart()

@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SuggestionBank.View.CreateDepartment"
-             Title="Cadastrar Departamento">
+<ContentPage
+    x:Class="SuggestionBank.View.CreateDepartment"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Cadastrar Departamento">
     <ContentPage.Content>
-        <StackLayout Margin="10,20,10,0">
-            <!--<Entry Text="{Binding Departments.Name}" Placeholder="Nome do Departamento"/>-->
-            <Frame Style="{StaticResource EntryFrame}">
-                <Entry Text="{Binding Departments.Name}" Placeholder="Nome do Departamento" WidthRequest="250"/>
-            </Frame>
+        <StackLayout Margin="10,20,10,10">
+            <Entry
+                Placeholder="Nome do Departamento"
+                Text="{Binding Departments.Name}"
+                WidthRequest="250" />
 
-            <Button Text="Salvar" Command="{Binding SaveCommand}"/>
+            <Button
+                Command="{Binding SaveCommand}"
+                Text="Salvar"
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,15 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SuggestionBank.View.ListDepartments"
-             Title="Lista de Departamentos">
+<ContentPage
+    x:Class="SuggestionBank.View.ListDepartments"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="PageDep"
+    Title="Lista de Departamentos">
     <ContentPage.Content>
         <StackLayout>
 
-            <ListView x:Name="DepartmentView" IsPullToRefreshEnabled="true" Margin="10,10" SeparatorColor="Gray" ItemsSource="{Binding ListDepartments}">
+            <ListView
+                x:Name="DepartmentView"
+                Margin="10,10"
+                ItemsSource="{Binding ListDepartments}"
+                SelectedItem="{Binding Departments}"
+                SelectionMode="Single"
+                SeparatorColor="Gray">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell TextColor="#000" Text="{Binding Name}" />
+                        <ViewCell>
+                            <SwipeView BackgroundColor="Transparent">
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            BackgroundColor="Crimson"
+                                            Command="{Binding BindingContext.DeleteCommand, Source={x:Reference PageDep}}"
+                                            CommandParameter="{Binding .}"
+                                            Text="Excluir" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            BackgroundColor="LightSeaGreen"
+                                            Command="{Binding BindingContext.EditCommand, Source={x:Reference PageDep}}"
+                                            CommandParameter="{Binding .}"
+                                            Text="Editar" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout Padding="5,0" Spacing="3">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span FontSize="12" Text="Departamento: " />
+                                                    <Span Text="&#10;" />
+                                                    <Span
+                                                        FontAttributes="Bold"
+                                                        FontSize="14"
+                                                        Text="{Binding Name}" />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                            </SwipeView>
+
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

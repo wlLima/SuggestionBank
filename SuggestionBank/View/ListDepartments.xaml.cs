@@ -17,7 +17,13 @@ namespace SuggestionBank.View
 		public ListDepartments ()
 		{
 			InitializeComponent ();
-            BindingContext = new ListDepartmentsViewModel();
+           
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            BindingContext = new ListDepartmentsViewModel();
+        }
+    }
 }

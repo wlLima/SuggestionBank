@@ -1,110 +1,200 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="SuggestionBank.MainPage">
+<ContentPage
+    x:Class="SuggestionBank.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
-        <pancakeview:PancakeView  BackgroundColor="#e14" Padding="24" CornerRadius="0,0,15,15">
+        <pancakeview:PancakeView
+            Padding="24"
+            BackgroundColor="#B92E1A"
+            CornerRadius="0,0,30,30">
             <pancakeview:PancakeView.Shadow>
-                <pancakeview:DropShadow Color="#000000" Offset="15,15"   />
+                <pancakeview:DropShadow Offset="15,15" Color="#000000" />
             </pancakeview:PancakeView.Shadow>
-            
-            <Label Text="Banco de Sugestões" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span
+                                FontSize="18"
+                                Text="Banco de"
+                                TextColor="White" />
+                            <Span Text="&#10;" />
+                            <Span
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                Text="Sugestões"
+                                TextColor="White" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </pancakeview:PancakeView>
 
-        <Grid Margin="10, 20, 0,0">
-            
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
+        <Label Margin="10" HorizontalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span FontSize="16" Text="Conectando " />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="ideias, " />
+                        <Span FontSize="16" Text="impulsionando " />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="resultados " />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="!!!"
+                            TextColor="#B92E1A" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Grid
+            Margin="10"
+            ColumnDefinitions="*,*"
+            RowDefinitions="*,*">
             <pancakeview:PancakeView
-                CornerRadius="8" 
-                BackgroundColor="#fff" 
+                Margin="5"
                 Padding="10"
+                BackgroundColor="#fff"
+                CornerRadius="8"
                 HeightRequest="100"
-                WidthRequest="250"
-                Margin="10, 0"
-                HorizontalOptions="CenterAndExpand"
-                >
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="250">
                 <pancakeview:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CreateSuggestionCommand}" />
                 </pancakeview:PancakeView.GestureRecognizers>
-                
                 <pancakeview:PancakeView.Shadow>
-                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                    <pancakeview:DropShadow Offset="10,10" Color="#000000" />
                 </pancakeview:PancakeView.Shadow>
-                
-                <Label Text="Cadastrar sugestões" TextColor="#000" />
+
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span FontSize="15" Text="Cadastrar" />
+                                <Span Text="&#10;" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="Sugestões"
+                                    TextColor="#B92E1A" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </pancakeview:PancakeView>
 
-            <pancakeview:PancakeView 
-                CornerRadius="8" 
-                BackgroundColor="#fff" 
-                Padding="10" 
-                Margin="10, 0"
-                HeightRequest="100"
-                WidthRequest="250"
-                HorizontalOptions="CenterAndExpand"
+            <pancakeview:PancakeView
                 Grid.Column="1"
-                >
+                Margin="5"
+                Padding="10"
+                BackgroundColor="#fff"
+                CornerRadius="8"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="250">
                 <pancakeview:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CreateDepartmentCommand}" />
                 </pancakeview:PancakeView.GestureRecognizers>
-                
+
                 <pancakeview:PancakeView.Shadow>
-                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                    <pancakeview:DropShadow Offset="10,10" Color="#000000" />
                 </pancakeview:PancakeView.Shadow>
-                
-                <Label Text="Cadastrar Departamento" TextColor="#000" />
+
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span FontSize="15" Text="Cadastrar" />
+                                <Span Text="&#10;" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    Text="Departamento"
+                                    TextColor="#B92E1A" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </pancakeview:PancakeView>
 
-            <pancakeview:PancakeView 
-                CornerRadius="8" 
-                BackgroundColor="#fff" 
-                Padding="10" 
-                Margin="10, 0"
-                HeightRequest="100"
-                WidthRequest="250"
-                HorizontalOptions="CenterAndExpand"
+            <pancakeview:PancakeView
                 Grid.Row="1"
-                >
+                Margin="5"
+                Padding="10"
+                BackgroundColor="#fff"
+                CornerRadius="8"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="250">
                 <pancakeview:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ListSuggestionCommand}" />
                 </pancakeview:PancakeView.GestureRecognizers>
-                
+
                 <pancakeview:PancakeView.Shadow>
-                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                    <pancakeview:DropShadow Offset="10,10" Color="#000000" />
                 </pancakeview:PancakeView.Shadow>
-                
-                <Label Text="Listar Sugestões" TextColor="#000" />
+
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span FontSize="15" Text="Listar" />
+                                <Span Text="&#10;" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="Sugestões"
+                                    TextColor="#B92E1A" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </pancakeview:PancakeView>
 
-            <pancakeview:PancakeView 
-                CornerRadius="8" 
-                BackgroundColor="#fff" 
-                Padding="10" 
-                Margin="10, 0"
-                HeightRequest="100"
-                WidthRequest="250"
-                HorizontalOptions="CenterAndExpand"
+            <pancakeview:PancakeView
                 Grid.Row="1"
                 Grid.Column="1"
-                >
+                Margin="5"
+                Padding="10"
+                BackgroundColor="#fff"
+                CornerRadius="8"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="250">
                 <pancakeview:PancakeView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ListDepartmentCommand}" />
                 </pancakeview:PancakeView.GestureRecognizers>
-                
+
                 <pancakeview:PancakeView.Shadow>
-                    <pancakeview:DropShadow Color="#000000" Offset="10,10"   />
+                    <pancakeview:DropShadow Offset="10,10" Color="#000000" />
                 </pancakeview:PancakeView.Shadow>
-                <Label Text="Listar Departamentos" TextColor="#000" />
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span FontSize="15" Text="Listar" />
+                                <Span Text="&#10;" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="17"
+                                    Text="Departamento"
+                                    TextColor="#B92E1A" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </pancakeview:PancakeView>
 
         </Grid>

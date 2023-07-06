@@ -1,16 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SuggestionBank.View.ListSuggestions"
-             Title="Lista de Sugestões">
+<ContentPage
+    x:Class="SuggestionBank.View.ListSuggestions"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="PageSug"
+    Title="Lista de Sugestões">
     <ContentPage.Content>
         <StackLayout>
-
-
-            <ListView x:Name="SuggestionView" IsPullToRefreshEnabled="true" Margin="10,10" SeparatorColor="Gray" ItemsSource="{Binding ListSuggestions}">
+            <Picker
+                Title="Filtrar"
+                Margin="0,0,0,10"
+                ItemDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding ListDepartment}"
+                SelectedItem="{Binding DepartmentSelected}" />
+            <ListView
+                x:Name="SuggestionView"
+                Margin="10,10"
+                ItemsSource="{Binding ListSuggestions}"
+                RowHeight="130"
+                SelectedItem="{Binding SuggestionsSelected}"
+                SelectionMode="Single"
+                SeparatorColor="Gray">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell TextColor="#000" Text="{Binding Suggestion}" />
+                        <ViewCell>
+                            <SwipeView BackgroundColor="Transparent">
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            BackgroundColor="Crimson"
+                                            Command="{Binding BindingContext.DeleteCommand, Source={x:Reference PageSug}}"
+                                            CommandParameter="{Binding .}"
+                                            Text="Excluir" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <!--<SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            BackgroundColor="LightSeaGreen"
+                                            Command="{Binding BindingContext.EditCommand, Source={x:Reference PageSug}}"
+                                            CommandParameter="{Binding .}"
+                                            Text="Editar" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>-->
+
+
+                                <StackLayout Padding="5,0" Spacing="3">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span FontSize="12" Text="Colaborador: " />
+                                                    <Span Text="&#10;" />
+                                                    <Span
+                                                        FontAttributes="Bold"
+                                                        FontSize="14"
+                                                        Text="{Binding Collaborator}" />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span FontSize="12" Text="Departamento: " />
+                                                    <Span Text="&#10;" />
+                                                    <Span
+                                                        FontAttributes="Bold"
+                                                        FontSize="14"
+                                                        Text="{Binding Departament}" />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span FontSize="12" Text="Sugestão: " />
+                                                    <Span Text="&#10;" />
+                                                    <Span FontSize="14" Text="{Binding Suggestion}" />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
+
+                            </SwipeView>
+
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

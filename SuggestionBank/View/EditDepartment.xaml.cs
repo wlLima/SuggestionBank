@@ -16,7 +16,7 @@ namespace SuggestionBank.View
         public EditDepartment()
         {
             InitializeComponent();
-            BindingContext = new EditDepartmentViewModel();
+           // BindingContext = new EditDepartmentViewModel(new Model.Department());
         }
     }
 }
